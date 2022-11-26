@@ -10,11 +10,11 @@ public class Registro {
   String arquivo;
 
   public Registro(String arquivo) {
-
+    this.arquivo = arquivo;
   }
 
   public void registrarPedido(Pedido pedido) {
-    try (BufferedWriter bw = Files.newBufferedWriter(Path.of("registro.txt"), StandardCharsets.UTF_8,
+    try (BufferedWriter bw = Files.newBufferedWriter(Path.of(arquivo), StandardCharsets.UTF_8,
         StandardOpenOption.APPEND)) {
       bw.write(String.format("%s\n%s------\n", Instant.now(), pedido));
     } catch (IOException e) {
