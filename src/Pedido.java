@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+
+// Classes padrão do Java
+import java.util.ArrayList; // Concreto
+import java.util.List; // Abstrato
 
 public class Pedido {
   public List<Pizza> pizzas;
@@ -21,6 +23,7 @@ public class Pedido {
   public double valorConta() {
     double valor = 0.0;
 
+    // foreach
     for (Pizza pizza : pizzas) {
       valor += pizza.getPreco();
     }

@@ -7,8 +7,6 @@ public class Bebida {
       case "coca-cola":
         nome = "coca-cola";
         break;
-      case "pepsi":
-      case "fanta":
       case "guarana":
       case "guaraná":
         nome = "guaraná";
@@ -16,6 +14,13 @@ public class Bebida {
       case "agua":
       case "água":
         nome = "água";
+        break;
+      case "tubaína":
+      case "tubaina":
+        nome = "tubaína";
+      case "pepsi":
+      case "fanta":
+
         break;
       default:
         throw new RuntimeException("Bebida não disponível");
@@ -30,12 +35,13 @@ public class Bebida {
       case "pepsi":
       case "fanta":
       case "guaraná":
+      case "tubaína":
         return 7.0;
       case "água":
         return 5.0;
+      default:
+        return 0.0;
     }
-
-    return 0.0;
   }
 
   public String getNome() {

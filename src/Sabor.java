@@ -4,4 +4,5 @@ public enum Sabor {
   Portuguesa,
   Milho,
   Mussarela,
+  Frango,
 }

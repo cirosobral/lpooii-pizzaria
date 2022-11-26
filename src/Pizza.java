@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashMap; // Concreto
+import java.util.Map; // Abstrato
 
 public class Pizza {
   // Relação dos ingredientes e quantidade de cada ingrediente
@@ -9,6 +9,7 @@ public class Pizza {
   private double preco;
 
   public Pizza(Sabor sabor, String tamanho) throws RuntimeException {
+    // Ingrediente(n,p) / qtd
     ingredientes = new HashMap<Ingrediente, Double>();
     ingredientes.put(new Ingrediente("Massa", 4.5), ajustaQuantidade(1.0, tamanho));
     ingredientes.put(new Ingrediente("Molho", 1.5), ajustaQuantidade(0.5, tamanho));
@@ -93,6 +94,22 @@ public class Pizza {
             break;
         }
         break;
+      case Frango:
+        ingredientes.put(new Ingrediente("Frango", 15), 0.2);
+
+        switch (tamanho) {
+          case "P":
+            preco = 25;
+            break;
+          case "M":
+            preco = 27;
+            break;
+          case "G":
+            preco = 30;
+            break;
+        }
+        break;
+      // Caso padrão
       default:
         throw new RuntimeException("Sabor não disponível");
     }

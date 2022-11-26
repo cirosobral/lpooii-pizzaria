@@ -12,9 +12,13 @@ public class App {
                 System.out.println("1 - Pedir conta");
                 System.out.println("2 - Sair");
             }
+            // System.console() é a chamada para um objeto que interage com o console/linha
+            // de comando
             String entrada = System.console().readLine("Digite o número da opção [1 ou 2]: ");
 
             switch (entrada) {
+                case "2":
+                    break menuInicial;
                 case "1":
                     if (p == null) {
                         p = iniciarPedido();
@@ -23,9 +27,6 @@ public class App {
                         pedirConta(p);
                         p = null;
                     }
-                    break;
-                case "2":
-                    break menuInicial;
             }
         }
     }
@@ -75,7 +76,7 @@ public class App {
             Sabor sabor = Sabor.values()[escolha - 1];
 
             String tamanho = System.console().readLine("Escolha o tamanho [P, M ou G]: ");
-
+            // ------------------------ transformaEmMaiusuclas -- pega só a primeira letra
             Pizza pizza = new Pizza(sabor, tamanho.toUpperCase().substring(0, 1));
 
             pedido.addPizza(pizza);
